@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="design.css">
+    <title>Formulario de registro</title>
+</head>
+<body class="fondo">
+    <nav>
+        <h1 class="color"> Star wars fan page</h1>
+         <ul>
+             <li><a href="/index.html">inicio</a></li>
+             <li><a href="#">SWAPI</a>
+            </li>
+             <li> <a href="./formulario.html"> registrarse</a></li>
+             <li>
+                <a href="./login.html"><img class="icono" src="./img/user-solid-24.png" alt=""></a>
+             </li>
+         </ul>
+
+    </nav>
+    <form class="formulario" action="./login.php" method="POST">
+        <h4>login</h4>
+        <input class="controls" type="text" name="correo"  placeholder="ingrese su correo">
+        <input class="controls" type="password" name="contraseña"  placeholder=" ingrese su contraseña">
+        <input  class="boton" type="submit" name="login" value="Login">
+        <p> <a href="#">¿Olvido su contraseña?</a></p>
+</form>
+</body>
+</html>
