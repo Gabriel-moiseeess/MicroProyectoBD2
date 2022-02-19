@@ -12,36 +12,33 @@ function displayResults(data, value) {
     localStorage.setItem("films", JSON.stringify(data.result));
     var films = localStorage.getItem("films");
     var films_parse = JSON.parse(films);
-    films_parse.forEach(item => {
-      output += 
-      `<div class="card p-3 m-3" style =" opacity:.8">
+    films_parse.forEach((item) => {
+      output += `<div class="card p-3 m-3" style =" opacity:.8">
           <h4 class="card-title text-center">${item.properties.title}</h4>
-      </div>`
-   });
+      </div>`;
+    });
   }
 
   if (value === "people") {
     localStorage.setItem("people", JSON.stringify(data.results));
     var people = localStorage.getItem("people");
     var people_parse = JSON.parse(people);
-    people_parse.forEach(item => {
-      output += 
-      `<div class="card p-3 m-3" style =" opacity:.8">
+    people_parse.forEach((item) => {
+      output += `<div class="card p-3 m-3" style =" opacity:.8">
           <h4 class="card-title text-center">${item.name}</h4>
-      </div>`
-   });
+      </div>`;
+    });
   }
 
   if (value === "vehicles") {
     localStorage.setItem("vehicles", JSON.stringify(data.results));
     var vehicles = localStorage.getItem("vehicles");
     var vehicles_parse = JSON.parse(vehicles);
-    vehicles_parse.forEach(item => {
-      output += 
-      `<div class="card p-3 m-3" style =" opacity:.8">
+    vehicles_parse.forEach((item) => {
+      output += `<div class="card p-3 m-3" style =" opacity:.8">
           <h4 class="card-title text-center">${item.name}</h4>
-      </div>`
-   });
+      </div>`;
+    });
   }
   results.innerHTML = output;
 }
@@ -50,4 +47,3 @@ function displayResults(data, value) {
 document.querySelector("#buttons").addEventListener("click", (e) => {
   asyncFetch(e.target.textContent.trim().toLowerCase());
 });
-
