@@ -9,7 +9,6 @@ async function asyncFetch(value) {
 function displayResults(data, value) {
   let output = "";
   if (value === "films") {
-    console.log(JSON.stringify(data.result));
     localStorage.setItem("films", JSON.stringify(data.result));
     var films = localStorage.getItem("films");
     var films_parse = JSON.parse(films);
