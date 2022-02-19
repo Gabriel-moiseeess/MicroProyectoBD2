@@ -8,28 +8,47 @@ async function asyncFetch(value) {
 
 function displayResults(data, value) {
   let output = "";
-  console.log(data);
   if (value === "films") {
-    data.results.forEach((item) => {
-      localStorage.setItem("Films",  item.results.title);
-    });
+    console.log(JSON.stringify(data.result));
+    localStorage.setItem("films", JSON.stringify(data.result));
+    var films = localStorage.getItem("films");
+    var films_parse = JSON.parse(films);
+    films_parse.forEach(item => {
+      output += 
+      `<div class="card p-3 m-3" style =" opacity:.8">
+          <h4 class="card-title text-center">${item.properties.title}</h4>
+      </div>`
+   });
   }
 
   if (value === "people") {
-    data.results.forEach((item) => {
-        localStorage.setItem("people",  item.name);
-    });
+    localStorage.setItem("people", JSON.stringify(data.results));
+    var people = localStorage.getItem("people");
+    var people_parse = JSON.parse(people);
+    people_parse.forEach(item => {
+      output += 
+      `<div class="card p-3 m-3" style =" opacity:.8">
+          <h4 class="card-title text-center">${item.name}</h4>
+      </div>`
+   });
   }
 
   if (value === "vehicles") {
-    data.results.forEach((item) => {
-        localStorage.setItem("vehicles",  item.name);
-    });
+    localStorage.setItem("vehicles", JSON.stringify(data.results));
+    var vehicles = localStorage.getItem("vehicles");
+    var vehicles_parse = JSON.parse(vehicles);
+    vehicles_parse.forEach(item => {
+      output += 
+      `<div class="card p-3 m-3" style =" opacity:.8">
+          <h4 class="card-title text-center">${item.name}</h4>
+      </div>`
+   });
   }
-  
+  results.innerHTML = output;
 }
 
 //Event listener for buttons
 document.querySelector("#buttons").addEventListener("click", (e) => {
   asyncFetch(e.target.textContent.trim().toLowerCase());
 });
+

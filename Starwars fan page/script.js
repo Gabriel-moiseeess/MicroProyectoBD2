@@ -17,9 +17,8 @@ function loginUser() {
   var getPasswd = localStorage.getItem("password", password);
 
   if (email == getEmail && password == getPasswd) {
-    alert("USUARIO EXISTENTE");
-    
-    window.location.replace('http://127.0.0.1:5500/index.html');
+    document.location.href = "swapi.html"
+
   } else if (email !== getEmail && password !== getPasswd) {
     alert("USUARIO INEXISTENTE");
   }
