@@ -6,32 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="./script.js"></script>
     <link rel="stylesheet" href="design.css">
-    <script src="/oop.js"></script>
     <title>Formulario de registro</title>
 </head>
 <body class="fondo">
     <nav>
         <h1 class="color"> Star wars fan page</h1>
          <ul>
-             <li><a href="/index.html">inicio</a></li>
-             <li><a href="#">SWAPI</a>
+             <li><a href="/index.html" id="enlace">inicio</a></li>
             </li>
-             <li> <a href="./formulario.html">registrarse</a></li>
+             <li><a href="./formulario.html">registrarse</a></li>
              <li>
                 <a href="./login.html"><img class="icono" src="./img/user-solid-24.png" alt=""></a>
              </li>
          </ul>
 
     </nav>
-    <form class="formulario" method="POST" action = "./formulario.php">
+    <div class="formulario">
         <h4>Formulario de registro</h4>
-        <input class="controls" type="email" name="correo"  placeholder=" Coloque su correo">
-        <input class="controls" type="password" name="contraseña" placeholder="Coloque su contraseña">
-        <p> Estoy de acuerdo con <a href="#">Terminos y condiciones</a></p>
-        <input class="boton" type="submit" name="registro">
-        <p> <a href="./login.html">Ya tengo una cuenta</a></p>
-</form>
+        <input class="controls" type="email" name="correo"  id="email"  placeholder=" Coloque su correo">
+        <input class="controls" type="password" name="contraseña" id="password" placeholder="Coloque su contraseña">
+        <input class="boton" onclick="register()"  name="registro">
+        <p> <a href="#">Ya tengo una cuenta</a></p>
+    </div>
 </div>
 </body>
 </html>
